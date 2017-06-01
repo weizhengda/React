@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <script src="bower_components/react/react.js"></script>
+
+    <script src="bower_components/react/react-dom.js"></script>
+
+    <script src="bower_components/react//browser.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app"></div>
+    <script type="text/babel">
+
+        var Todolist=React.createClass({
+            getInitialState(){
+                    return{
+                        value:'',
+                        list:[]
+                    }
+            },
+            addData(value){
+               
+                alert(value);
+            },
+            render(){
+                    return (
+                        <div>
+
+                            <button onClick={this.addData.bind(this,'这是传值')}>按钮</button>
+                        </div>
+                    )
+            }
+        })
+     
+        ReactDOM.render(
+            <div>
+               <Todolist></Todolist>
+            </div> , 
+            document.getElementById('app') 
+
+        )
+
+
+
+    </script>
+
+</body>
+
+</html>

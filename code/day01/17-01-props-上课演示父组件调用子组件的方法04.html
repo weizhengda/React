@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="app"></div>
+	
+	<script src="bower_components/react/react.min.js"></script>
+	<script src="bower_components/react/react-dom.min.js"></script>
+	<script src="bower_components/react/browser.min.js"></script>
+
+	<script>
+	
+		//1.<Header msg='首页'></Header>
+
+		//this.props.msg
+	
+	</script>
+
+	<script type="text/babel">
+
+
+		//子组件
+		 var Header=React.createClass({
+				
+				getInitialState(){
+
+					return{
+						msg:'这是子组件的数据'
+					}
+				},
+				childRun(){
+					alert('这是子组件的方法');	
+				},
+				render(){
+
+					return(
+
+						<div>
+
+							<h2>这是一个头部组件</h2>
+						</div>
+					)
+				}
+			})
+	
+		
+		//父亲组件
+		var Home=React.createClass({
+
+			
+			parentRun(){
+				
+				//alert('parent');
+				//父亲组件执行子组件的方法
+				this.refs.header.childRun();
+
+				//父亲组件拿到子组件的数据
+				alert(this.refs.header.state.msg)
+			},
+
+			render(){
+
+				return(
+
+					<div>
+
+						<Header ref='header'></Header>
+						<button onClick={this.parentRun}>调用子组件的方法</button>
+
+					</div>
+
+				)
+			}
+		})
+	
+
+		ReactDOM.render(
+
+			<div>
+				<Home></Home>
+
+			</div>,
+		
+			document.getElementById('app')
+		)
+
+	</script>
+</body>
+</html>

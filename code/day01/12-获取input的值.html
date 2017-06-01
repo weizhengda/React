@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+   <script src="bower_components/react/react.js"></script>
+
+    <script src="bower_components/react/react-dom.js"></script>
+
+    <script src="bower_components/react//browser.min.js"></script>
+
+    <script type="text/babel">
+    
+        var Input = React.createClass({
+
+            getInitialState(){
+                return {
+                    value: '123'
+                }
+            },
+
+            getValue(){
+                console.log('触发了点击');
+                console.log(this.state.value)
+            },
+
+            change(e){
+                console.log(e);
+
+                //当我们在页面上实时修改Input里面的值，把它存给state 
+                this.setState({
+                    value: e.target.value
+                })
+            },
+
+            render(){
+                return (
+                    <div>
+                        <input type="text" value={ this.state.value }  onChange={ this.change } />
+                        <button onClick={ this.getValue }>获取值</button>
+                    </div>
+                )
+            }
+
+        })
+
+        ReactDOM.render(
+            <Input></Input> , 
+            document.getElementById('app') 
+
+        )
+
+
+
+    </script>
+
+</body>
+
+</html>

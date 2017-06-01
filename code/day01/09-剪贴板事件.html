@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script src="bower_components/react/react.min.js"></script>
+    <script src="bower_components/react/react-dom.min.js"></script>
+    <script src="bower_components/babel/browser.min.js"></script>
+    <script type="text/babel">
+    
+        //组件名字一定要首字母大写
+        var Hello = React.createClass({
+            
+
+            //copy
+            copy(){
+                console.log('执行了复制事件')
+            },
+
+            //cut 
+            cut(){
+                console.log('执行了剪切')
+            },
+
+            //paste
+            paste(){
+                console.log('执行了粘贴')
+            },
+
+            render: function(){
+                return (
+                    <div>
+                        <textarea onCopy={ this.copy } onCut={ this.cut } onPaste={ this.paste}></textarea>
+                    </div>
+                        
+                )
+            }
+        });
+
+
+        ReactDOM.render(
+            <Hello></Hello> , 
+            document.getElementById('app') 
+
+        )
+
+
+
+    </script>
+
+</body>
+
+</html>

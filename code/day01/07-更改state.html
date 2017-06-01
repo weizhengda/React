@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script src="bower_components/react/react.min.js"></script>
+    <script src="bower_components/react/react-dom.min.js"></script>
+    <script src="bower_components/babel/browser.min.js"></script>
+    <script type="text/babel">
+    
+        var Count = React.createClass({
+
+            // this 表示当前的组件
+            
+            getInitialState(){
+                return {
+                    number: 0
+                }
+            },
+
+
+            // 如果想要给元素定义一个函数，直接在组件里面定义就可以了
+            addOne: function(){
+                // 首先要能够拿到number 
+                // this 指向的是当前的组件
+                console.log(this.state.number);
+                //++this.state.number;
+
+                //01  使用setState可以解决页面不刷新数据的问题
+                //setState
+                //this.setState({
+                  //  number: ++this.state.number
+                //}) 
+
+
+                //02   这种方式也是可以解决的。   但是不推荐 ！
+                ++this.state.number;
+                this.forceUpdate();
+
+
+
+            },
+
+            render(){
+                return (
+                    <div>
+                        
+                        <span>{ this.state.number }</span>
+                        <button onClick={ this.addOne }>加1</button>
+                    </div>
+                )
+            }
+
+        })
+
+        ReactDOM.render(
+            <Count></Count> , 
+            document.getElementById('app') 
+
+        )
+
+
+
+    </script>
+
+</body>
+
+</html>

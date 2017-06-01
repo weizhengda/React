@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="bower_components/react/react.js"></script>
+
+      <script src="bower_components/react/react-dom.js"></script>
+
+      <script src="bower_components/react/browser.min.js"></script>
+
+
+  <script>
+    
+    /*
+      1.用户在表单填入的内容，属于用户跟组件的互动，所以不能用 this.props
+
+      2.文本输入框的值，不能用 this.props.value 读取，而要定义一个 onChange 事件的回调函数，通过 event.target.value 读取用户输入的值。textarea 元素、select元素、radio元素都属于这种情况
+      
+    */
+  </script>
+
+  </head>
+
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+     /*
+      var Input = React.createClass({
+        getInitialState: function() {
+          return {value: 'Hello!'};
+        },
+        handleChange: function(event) {
+          this.setState({value: event.target.value});
+        },
+        render: function () {
+          var value = this.state.value;
+          return (
+            <div>
+              <input type="text" value={value} onChange={this.handleChange} />
+              <p>{value}</p>
+            </div>
+          );
+        }
+      });
+      ReactDOM.render(<Input/>, document.getElementById('example'));
+
+
+
+     */
+      var  Input =React.createClass({
+
+
+          getInitialState:function(){
+
+              return {value: 'Hello!'};
+          },
+          inputChage:function(event){
+
+              this.setState({
+                  value: event.target.value
+
+              })
+          },
+          render:function(){
+
+             return (
+              <div>
+
+              11
+                <input type="text" value={this.state.value} onChange={this.inputChage} />
+                <p>{this.state.value}</p>
+              </div>
+            );
+          }
+
+      })
+
+
+        ReactDOM.render(<Input/>, document.getElementById('example'));
+
+
+      
+    </script>
+  </body>
+</html>

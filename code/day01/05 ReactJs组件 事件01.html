@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+
+        <script src="bower_components/react/react.js"></script>
+
+		<script src="bower_components/react/react-dom.js"></script>
+
+        <script src="bower_components/react//browser.min.js"></script>
+
+        <script>
+            
+            //React 允许将代码封装成组件（component），然后像插入普通 HTML 标签一样，在网页中插入这个组件。React.createClass 方法就用于生成一个组件类
+
+
+            //注意，组件类的第一个字母必须大写，否则会报错，比如HelloMessage不能写成helloMessage。另外，组件类只能包含一个顶层标签，否则也会报错。
+
+            //var HelloMessage=React.createClass
+
+
+            //注意：  组件模板必须有跟节点
+
+
+            //  <button onClick={this.run}>按钮</button>
+
+            //
+            //run:function(){
+            //    alert('这是一个run方法')
+            // }
+
+        </script>
+
+    </head>
+    <body>
+		<div id="box">
+			
+		</div>
+              
+        <script type="text/babel">
+
+
+
+            
+            var Header=React.createClass({
+
+
+                run:function(){
+                    alert('这是一个run方法')
+                },
+                requestData(){
+
+                    alert('我要请求数据了');
+                },
+
+                render(){  /*模板*/
+                    return(
+                        <div>
+                            <h2>这是一个头部组件</h2>
+
+                            <button onClick={this.run}>按钮执行run方法1</button>
+
+
+                             <button onClick={this.requestData}>按钮执行run方法2</button>
+                        </div>
+                    )
+                }
+            })
+
+
+
+
+
+            //根组件
+            ReactDOM.render(
+                <div>
+
+                    <Header></Header>
+                    <h2>msg</h2>
+                </div>,
+
+                document.getElementById('box')
+            )
+
+        </script>
+    </body>
+</html>
+
+

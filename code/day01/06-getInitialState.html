@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+         <script src="bower_components/react/react.js"></script>
+
+		<script src="bower_components/react/react-dom.js"></script>
+
+         <script src="bower_components/react//browser.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    
+    <script type="text/babel">
+    
+        
+        //定义content组件
+        //getInitialState 初始化数据的方法
+
+        //this.state.名称   比如 this.state.msg 拿到了getInitialState定义的数据
+
+
+        /*
+        改变初始化的数据
+        this.setState({
+            
+        })
+        */ 
+
+
+        var Content=React.createClass({
+
+            getInitialState:function(){   /*和render一样都是react内置的方法*/
+                return{   /*这是一个对象*/
+
+                    msg:'这是InitialState里面的数据',
+                    name:'张三',
+                    list:''
+                }
+
+            },
+
+
+            run(){  /*定义run方法*/
+                alert('执行了run方法');
+            },  
+            requestData(){   /*定义requestData方法*/
+                 alert('requestData');
+
+                 //请求数据改变list的值
+                
+                this.setState({   /*改变初始化的数据*/
+
+                    list:'这是改变后的值'
+                })
+
+            },  
+
+            //模板
+            render(){
+
+                return(
+                    <div>
+
+                        <h2>这是一个内容组件-{this.state.msg}--{this.state.name}</h2>
+
+
+                        <h2>{this.state.list}</h2>
+
+                        <button onClick={this.run}>执行run方法</button>
+
+
+                        <button onClick={this.requestData}>请求数据</button>
+                    </div>
+                )
+            }
+
+        })
+
+
+        ReactDOM.render(
+            <div>
+                    <Content></Content>
+
+            </div>,
+            document.getElementById('app')
+
+        )
+
+
+
+    </script>
+
+</body>
+
+</html>

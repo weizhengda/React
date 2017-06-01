@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ 	<script src="bower_components/react/react.js"></script>
+
+	<script src="bower_components/react/react-dom.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+
+
+    <script>
+    	
+    	/*
+    	
+		组件的属性可以接受任意值，字符串、对象、函数等等都可以。有时，我们需要一种机制，验证别人使用组件时，提供的参数是否符合要求。
+		组件类的PropTypes属性，就是用来验证组件实例的属性是否符合要求
+
+    	*/
+    </script>
+
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+      var data = 123;
+
+      var MyTitle = React.createClass({
+        propTypes: {
+          title: React.PropTypes.string.isRequired,
+        },
+
+        render: function() {
+          return <h1> {this.props.title} </h1>;
+        }
+      });
+
+      ReactDOM.render(
+        <MyTitle title={data} />,
+        document.getElementById('example')
+      );
+
+
+
+    </script>
+  </body>
+</html>
+

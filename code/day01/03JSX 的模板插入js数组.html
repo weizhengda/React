@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+
+        <script src="bower_components/react/react.js"></script>
+
+		<script src="bower_components/react/react-dom.js"></script>
+
+         <script src="bower_components/react//browser.min.js"></script>
+
+
+
+        <script>
+            
+            //HTML 语言直接写在 JavaScript 语言之中，不加任何引号，这就是 JSX 的语法，它允许 HTML 与 JavaScript 的混写
+
+            //所有的模板要被一个根节点包含起来
+
+            //{}绑定数据
+
+
+
+        </script>
+
+    </head>
+    <body>
+		<div id="box">
+			
+		</div>
+              
+        <script type="text/babel">
+            
+            var msg='this is a msg';  /*数据*/
+             
+            var arr=[<h2>这是一个标题</h2>,'<h2>这又是一个数据</h2>']
+
+            ReactDOM.render(
+                <div>
+                    <h2>这是一个react demo---{msg}</h2>
+
+                    {arr}
+                </div>,
+                document.getElementById('box')
+            )
+
+        </script>
+    </body>
+</html>
+
+

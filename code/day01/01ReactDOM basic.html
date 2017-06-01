@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+
+        <script src="bower_components/react/react.js"></script>
+
+		<script src="bower_components/react/react-dom.js"></script>
+
+        <script src="bower_components/react//browser.min.js"></script>
+
+        <script>
+
+ 		//开始:React 的安装包，可以到官网下载。不过，React Demos 已经自带 React 源码，不用另外安装，只需把这个库拷贝到你的硬盘就行了。
+
+
+        	//上面代码一共用了三个库： react.js 、react-dom.js 和 Browser.js ，它们必须首先加载。
+
+        	//1. react.js 是 React 的核心库，
+        	//2. react-dom.js 是提供与 DOM 相关的功能，
+        	//3. Browser.js 的作用是将 JSX 语法转为 JavaScript 语法，这一步很消耗时间，实际上线的时候，应该将它放到服务器完成。
+
+			
+			//注意:	使用JSX的语法的话<script> 标签的 type 属性为 text/babel 。这是因为 React 独有的 JSX 语法，跟 JavaScript 不兼容。凡是使用 JSX 的地方，都要加上 type="text/babel" 。
+
+
+
+
+        </script>
+
+
+
+    </head>
+    <body>
+
+        <!--视图-->
+		<div id="box">
+			
+		</div>
+      
+    </body>
+</html>
+
+
+
+
+<script type="text/babel">
+    
+    //jsx的语法   
+
+    //JSX是React的核心组成部分，它使用XML标记的方式去直接声明界面
+    //JSX标签成对出现
+
+
+    //ReactDOM.render(模板,dom节点)
+
+
+    ReactDOM.render(
+        <div>
+            <h2>你和React</h2>
+            <ul>
+                <li>列表1</li>
+                <li>列表1</li>
+                <li>列表1</li>
+            </ul>           
+        </div>
+        ,
+        document.getElementById('box')
+
+    )
+
+
+</script>
+

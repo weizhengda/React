@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="app"></div>
+	
+	<script src="bower_components/react/react.min.js"></script>
+	<script src="bower_components/react/react-dom.min.js"></script>
+	<script src="bower_components/react/browser.min.js"></script>
+
+	<script>
+	
+		//1.<Header msg='首页'></Header>
+
+		//this.props.msg
+	
+	</script>
+
+	<script type="text/babel">
+
+
+		//子组件
+		 var Header=React.createClass({
+
+				render(){
+
+					return(
+
+						<div>
+
+							<h2>这是一个头部组件--{this.props.msg}</h2>
+						</div>
+
+					)
+				}
+			})
+	
+		
+		//父亲组件
+		var Home=React.createClass({
+
+			getInitialState(){
+
+				return{
+
+					title:'父组件的msg'
+				}
+			},
+
+			render(){
+
+				return(
+
+					<div>
+
+						<Header msg={this.state.title}></Header>
+
+						<h2>这是一个首页组件</h2>
+					</div>
+
+				)
+			}
+		})
+	
+
+		ReactDOM.render(
+
+			<div>
+				<Home></Home>
+
+			</div>,
+		
+			document.getElementById('app')
+		)
+
+	</script>
+</body>
+</html>

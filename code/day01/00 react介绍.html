@@ -1,0 +1,90 @@
+1.React简介
+
+
+React来自于Facebook，是的，就是那个你们听说过但是打不开的网站。Facebook的开发者当时在开发一个广告系统，因为对当前所有的MVC框架不满意，所以就自己写了一个UI框架，于是就有了React。后来因为觉得实在是好用，所以在2013年月份开源的此框架。经过这几年的沉淀，React越来越强大，也受到了越来越多的开发者喜爱。React目前（2015-05-04）的版本是0.14.0，从版本号上看还没有达到1.0版，意味着React还在频繁地修改，普遍应用于产品中还需要一定的时间。2015年三月份的F8开发者大会上，Facebook又发布了React Native，正式把React的触角伸向了APP。同时还为React native开发了一款基于Atom的IDE-Nuclide，也是开源。
+
+
+React 把用户界面抽象成一个个组件，如按钮组件 Button、对话框组件 Dialog、日期组件 Calendar。开发者通过组合这些组件，最终得到功能丰富、可交互的页面。
+
+	<!--
+
+		React来自于Facebook公司的开源项目
+
+
+		可以开发单页面应用
+		
+
+		组件化模块化  开发模式
+
+
+		React通过对DOM的模拟(虚拟dom)，最大限度地减少与DOM的交互
+
+
+		灵活  React可以与已知的库或框架很好地配合。
+
+
+		函数式编程   
+
+
+		JSX是React的核心组成部分，它使用XML标记的方式去直接声明界面，   html  js混写模式
+
+		
+	
+	-->
+
+
+
+2.React特点：
+	1.声明式设计 −React采用声明范式，可以轻松描述应用。
+	2.高效 −React通过对DOM的模拟(虚拟dom)，最大限度地减少与DOM的交互。
+	3.灵活 −React可以与已知的库或框架很好地配合。
+	4.函数式编程-它属于"结构化编程"的一种，主要思想是把运算过程尽量写成一系列嵌套的函数调用。
+	5.JSX − JSX是React的核心组成部分，它使用XML标记的方式去直接声明界面，界面组件之间可以互相嵌套
+	6.组件 − 通过 React 构建组件，使得代码更加容易得到复用，能够很好的应用在大项目的开发中。
+	
+
+
+3.react的基本语法和简单使用
+
+
+	3.1开始:
+
+		React 的安装包，可以到官网下载。不过，React Demos 已经自带 React 源码，不用另外安装，只需把这个库拷贝到你的硬盘就行了。
+
+		
+
+	3.2js介绍：react.js 、react-dom.js 和 Browser.js ，它们必须首先加载。
+
+        	1. react.js 是 React 的核心库，
+        	2. react-dom.js 是提供与 DOM 相关的功能，
+        	3. Browser.js 的作用是将 JSX 语法转为 JavaScript 语法，这一步很消耗时间，实际上线的时候，应该通过webpack这样的工具直接打包后运行
+
+
+	3.3使用JSX的语法（JSX就是Javascript和XML结合的一种格式）的话<script> 标签的 type 属性为 text/babel 。这是因为 React 独有的 JSX 语法，跟 JavaScript 不兼容。凡是使用 JSX 的地方，都要加上 type="text/babel" 。
+
+
+
+	3.4 React官方网站： https://facebook.github.io/react/
+
+
+			bower 专注于前端的  (去年就暂停维护了)
+
+			    安装bower :  npm install bower -g    / npm install  -g bower
+
+
+			1. 下载react文件： bower install react 
+			2. 创建html文件
+			3. 引入react.min.js  和react-dom.min.js
+
+			为了让react的代码能够在浏览器上正常的运行，所以还需要下载babel 
+			1. 下载Babel: bower install babel 
+			2. 在html里面引入browser.min.js
+
+
+			
+			我们就可以来敲一敲 React   
+
+			    把react的代码放到script标签里： 然后给script 添加一个type="text/babel"
+
+
+			jsx里面，如果需要注释，那么就使用 js的注释语法

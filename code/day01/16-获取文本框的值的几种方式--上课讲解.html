@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <script src="bower_components/react/react.js"></script>
+
+    <script src="bower_components/react/react-dom.js"></script>
+
+    <script src="bower_components/react//browser.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+
+
+
+    <script type="text/babel">
+
+
+        var Header=React.createClass({
+
+            getInitialState(){
+
+                return{
+                    msg:''
+                }
+            },
+            run(){
+
+                alert(this.state.msg)
+
+            },
+
+            changeData(e){
+                this.setState({
+
+                    msg:e.target.value
+                })
+            },
+
+            render(){
+
+                return(
+
+                    <div>
+                        <input type="text" onChange={this.changeData}/>
+                        <button onClick={this.run}>获取值</button>                        
+                    </div>
+                )
+            }
+        })
+     
+        ReactDOM.render(
+            <div>
+            <Header></Header>
+            </div> , 
+            document.getElementById('app') 
+
+        )
+
+
+
+    </script>
+
+</body>
+
+</html>

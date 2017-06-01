@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script src="bower_components/react/react.min.js"></script>
+    <script src="bower_components/react/react-dom.min.js"></script>
+    <script src="bower_components/babel/browser.min.js"></script>
+    <script type="text/babel">
+    
+        //组件名字一定要首字母大写
+        var Hello = React.createClass({
+
+            //这里面就存放的是组件需要的数据
+            getInitialState: function(){
+                return {
+                    name: 'hello,React!!!!',
+                    arr: [ '第一个','第二个','第三个','第四个']
+                }
+            },
+
+            render: function(){
+                return (
+                    <div>
+                        <h1>{ this.state.name }</h1>
+                        <ul>
+                           {
+                                this.state.arr.map( function(item,key){
+                                    return <li>{item}</li>
+                                })
+                           }
+                        </ul>
+                    </div>
+                        
+                )
+            }
+        });
+
+
+        ReactDOM.render(
+            <Hello></Hello> , 
+            document.getElementById('app');
+        )
+
+
+
+    </script>
+
+</body>
+
+</html>

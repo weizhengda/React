@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script src="bower_components/react/react.min.js"></script>
+    <script src="bower_components/react/react-dom.min.js"></script>
+    <script src="bower_components/react/browser.min.js"></script>
+    <script type="text/babel">
+    
+        var Input = React.createClass({
+
+            getInitialState(){
+                return {
+                    value: '123'
+                }
+            },
+
+            getValue(){
+              console.log(this.refs.inner.value)  
+
+              console.log(this.refs.inner);
+
+              this.refs.obox.style.color='red';
+            },
+
+            change(e){
+                console.log(e.target.value);
+
+                //当我们在页面上实时修改Input里面的值，把它存给state 
+                this.setState({
+                    value: e.target.value
+                })
+            },
+
+            render(){
+                return (
+                    <div>
+                        <input type="text" value={ this.state.value } ref="inner" onChange={ this.change } />
+                        <div ref="obox">这是一个box</div>
+                        <button onClick={ this.getValue }>获取值</button>
+                    </div>
+                )
+            }
+
+        })
+
+        ReactDOM.render(
+            <Input></Input> , 
+            document.getElementById('app') 
+
+        )
+
+
+
+    </script>
+
+</body>
+
+</html>

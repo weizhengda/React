@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="app"></div>
+	
+	<script src="bower_components/react/react.min.js"></script>
+	<script src="bower_components/react/react-dom.min.js"></script>
+	<script src="bower_components/babel/browser.min.js"></script>
+
+	<script type="text/babel">
+		
+		var ChildComponents = React.createClass({
+
+			getInitialState(){
+				return {
+					text: ''
+				}
+			},
+
+			change(e){
+				console.log(e.target.value);
+				this.setState({
+					text: e.target.value
+				});
+
+				this.props.fatherfn(e.target.value)
+			},
+
+			render(){
+				return (
+					<div>
+						<input type="text" value={ this.state.text } onChange={ this.change} />
+					</div>
+				)
+			}
+		});
+
+
+		var FatherComponents = React.createClass({
+			//在父组件里面，来获取子组件里面的input的值
+
+			getInitialState(){
+				return {
+					title: '默认的标题'
+				}
+			},
+
+			ftchange( obj ){
+				console.log(obj);
+				this.setState({
+					title: obj
+				})
+			},
+
+			render(){
+				return (
+					<div>
+						<h1>{ this.state.title }</h1>
+						<ChildComponents fatherfn={ this.ftchange}></ChildComponents>
+					</div>
+					
+				)
+			}
+		});
+
+
+		ReactDOM.render(
+			<FatherComponents></FatherComponents>,
+			document.getElementById('app')
+		)
+
+	</script>
+</body>
+</html>
